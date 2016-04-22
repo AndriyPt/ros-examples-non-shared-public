@@ -9,7 +9,6 @@
 *.pch
 
 # Compiled Dynamic libraries
-*.so
 *.dylib
 *.dll
 
@@ -26,9 +25,6 @@
 *.exe
 *.out
 *.app
-
-# Python byte code
-*.pyc
 
 #PyCharm
 .idea
