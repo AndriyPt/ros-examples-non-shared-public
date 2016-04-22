@@ -9,9 +9,6 @@ find_package(catkin REQUIRED)
 
 catkin_package(
   INCLUDE_DIRS include
-#  LIBRARIES sr_public_library
-#  CATKIN_DEPENDS other_catkin_pkg
-#  DEPENDS system_lib
 )
 
 ###########
@@ -19,7 +16,6 @@ catkin_package(
 ###########
 
 include_directories(include)
-
 
 if(EXISTS "${CMAKE_CURRENT_LIST_DIR}/lib/libsr_private_library.so")
     configure_file(
@@ -34,17 +30,14 @@ endif()
 ## Install ##
 #############
 
-## Mark executables and/or libraries for installation
-# install(TARGETS sr_public_library sr_public_library_node
-#   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-#   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-#   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-# )
+install(FILES
+  ${CMAKE_CURRENT_LIST_DIR}/lib/libsr_private_library.so
+  DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+)
 
-## Mark cpp header files for installation
-# install(DIRECTORY include/${PROJECT_NAME}/
-#   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
-#   FILES_MATCHING PATTERN "*.h"
-#   PATTERN ".svn" EXCLUDE
-# )
+install(DIRECTORY include/${PROJECT_NAME}/
+  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+  FILES_MATCHING PATTERN "*.h"
+  PATTERN ".svn" EXCLUDE
+)
 
