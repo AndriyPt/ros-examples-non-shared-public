@@ -20,7 +20,7 @@ include_directories(include)
 if(EXISTS "${CMAKE_CURRENT_LIST_DIR}/lib/libsr_private_library.so")
     configure_file(
             ${CMAKE_CURRENT_LIST_DIR}/lib/libsr_private_library.so
-            ${CATKIN_GLOBAL_LIBEXEC_DESTINATION}/libsr_private_library.so
+            ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/libsr_private_library.so
             COPYONLY)
 else()
     message(WARNING "You should this message once in case if you are non-shared-library developer.")
